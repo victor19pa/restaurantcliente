@@ -1,10 +1,14 @@
 import React from 'react';
+import { Route, Routes } from 'react-router';
+import Ordenes from './components/views/Ordenes';
 
 
 function App() {
   return (
     <>
-      <h1 className='text-3xl font-light'>Hola mundo</h1>
+      <Routes>
+        <Route path='/' element={<Ordenes/>}/>
+      </Routes>
     </>
   );
 }
