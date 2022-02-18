@@ -1,8 +1,12 @@
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
 import * as Yup from 'yup';
+import { FirebaseContext } from '../../firebase'
 
 const NuevoPlatillo = () => {
+    //context con operaciones firebase
+    const {firebase} = useContext(FirebaseContext)
+    console.log(firebase)
 
     //validacion y lectura de datos
     const formik = useFormik({
