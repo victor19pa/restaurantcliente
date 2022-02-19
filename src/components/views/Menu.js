@@ -17,6 +17,7 @@ const Menu = () => {
     },[])
 
     //snapshot para usar en tiempo real
+    //accediendo a los datos en vivo de la base de datos
     function handleSnapshot(snapshot){
         const platillos = snapshot.docs.map(doc => {
             return{

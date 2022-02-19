@@ -12,8 +12,10 @@ const Platillo = ({platillo}) => {
 
     //modificar estado en firebase
     const actualizarDisponibilidad = () => {
+        //conversion string a boolean
         const existencia = (existenciaRef.current.value === "true");
 
+        //actualizando nuevo estado
         try {
             firebase.db.collection('productos')
                 .doc(id)
@@ -32,6 +34,7 @@ const Platillo = ({platillo}) => {
             <div className='w-full px-3 mb-4'>
                 <div className='p-5 shadow-md bg-white'>
                     <div className='lg:flex'>
+                        {/**imagen y disponibilidad */}
                         <div className='lg:w-5/12 xl:w-3/12'>
                             
                             <img src={imagen} alt='imagen platillo'/>
@@ -52,7 +55,7 @@ const Platillo = ({platillo}) => {
                                 </label>
                             </div>
                         </div>
-
+                        {/**informacion platillo */}
                         <div className='lg:w-7/12 xl:w-9/12 pl-5'>
                             <p className="font-bold text-2xl text-yellow-600 mb-4">{nombre} </p>
                             <p className="text-gray-600 mb-4">

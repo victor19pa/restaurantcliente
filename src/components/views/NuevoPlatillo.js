@@ -61,12 +61,10 @@ const NuevoPlatillo = () => {
         setProgreso(0)
         setSubiendo(true)
     }
-
     const handleUploadError = (error) => {
         setSubiendo(false)
         console.log(error)
     }
-
     const handleUploadSuccess = async (nombre) => {
         setProgreso(100)
         setSubiendo(false)
@@ -81,12 +79,10 @@ const NuevoPlatillo = () => {
         //console.log(url)
         setUrlimagen(url)
     }
-
     const handleProgress = (progreso) => {
         setProgreso(progreso)
         //console.log(progreso)
     }
-
 
     return (
         <>
@@ -97,6 +93,7 @@ const NuevoPlatillo = () => {
             <div className='flex justify-center mt-10'>
                 <div className='w-full max-w-3xl'>
                     <form onSubmit={formik.handleSubmit}>
+                        {/**nombre */}
                         <div className='mb-4'>
                             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='nombre'>Nombre</label>
                             <input
@@ -109,6 +106,7 @@ const NuevoPlatillo = () => {
                                 onBlur={formik.handleBlur}
                             />
                         </div>
+                        {/**errores nombre */}
                         {formik.touched.nombre && formik.errors.nombre ? (
                             <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-5' role='alert'>
                                 <p className='font-bold'>Hubo un error:</p>
@@ -116,7 +114,7 @@ const NuevoPlatillo = () => {
                             </div>
                         ) : null
                         }
-
+                        {/**precio */}
                         <div className='mb-4'>
                             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='precio'>Precio</label>
                             <input
@@ -139,6 +137,7 @@ const NuevoPlatillo = () => {
                         ) : null
                         }
 
+                        {/**categoria */}
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">Categoría</label>
                             <select
@@ -166,7 +165,7 @@ const NuevoPlatillo = () => {
                             </div>
                         ) : null
                         }
-
+                        {/**imagen */}
                         <div className='mb-4'>
                             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='imagen'>Imagen</label>
                             <FileUploader
@@ -189,16 +188,13 @@ const NuevoPlatillo = () => {
                             </div>
                         ) 
                         }
-
                         { urlimagen && (
                             <p className="bg-green-500 text-white p-3 text-center my-5">
                                 La imagen se subió correctamente
                             </p>
                         ) 
                         }
-
-                        
-
+                        {/**Descripcion */}
                         <div className='mb-4'>
                             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='descripcion'>Descripcion</label>
                             <textarea
@@ -218,7 +214,7 @@ const NuevoPlatillo = () => {
                             </div>
                         ) : null
                         }
-
+                        {/**input añadir platillo */}
                         <input
                             type='submit'
                             className='bg-gray-800 hover:bg-gray-900 w-full mt-5 p-2 text-white uppercase font-bold'
