@@ -41,7 +41,7 @@ const NuevoPlatillo = () => {
                 .required('Este campo es obligatorio'),
         }),
         onSubmit: datos => {
-            console.log(datos)
+            //console.log(datos)
             try {
                 datos.existencia = true;
                 datos.imagen = urlimagen
@@ -78,13 +78,13 @@ const NuevoPlatillo = () => {
             .child(nombre)
             .getDownloadURL();
 
-        console.log(url)
+        //console.log(url)
         setUrlimagen(url)
     }
 
     const handleProgress = (progreso) => {
         setProgreso(progreso)
-        console.log(progreso)
+        //console.log(progreso)
     }
 
 
